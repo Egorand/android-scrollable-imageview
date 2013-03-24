@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
 	}
 
 	private void setImageBitmap(Bitmap bmp) {
-		imageView = new ScalableImageView(this);
+		imageView = new ScrollableImageView(this);
 		imageView.setLayoutParams(new LayoutParams(bmp.getWidth(), bmp.getHeight()));
 		imageView.setImageBitmap(bmp);
 		ViewGroup root = (ViewGroup) findViewById(android.R.id.content);

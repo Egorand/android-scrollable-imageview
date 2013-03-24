@@ -10,10 +10,11 @@ import android.widget.ImageView;
 import android.widget.OverScroller;
 
 /**
- * An extension to the standard Android {@link ImageView}, which makes it respond to Scroll and Fling events. Uses a
- * {@link GestureDetectorCompat} and a {@link OverScroller} to provide scrolling functionality.
+ * An extension to the standard Android {@link ImageView}, which makes it
+ * respond to Scroll and Fling events. Uses a {@link GestureDetectorCompat} and
+ * a {@link OverScroller} to provide scrolling functionality.
  * 
- * @author eandreevici
+ * @author EgorAnd
  * 
  */
 public class ScrollableImageView extends ImageView {
@@ -30,6 +31,8 @@ public class ScrollableImageView extends ImageView {
 	public ScrollableImageView(Context context) {
 		super(context);
 
+		// We will need screen dimensions to make sure we don't overscroll the
+		// image
 		DisplayMetrics dm = getResources().getDisplayMetrics();
 		screenW = dm.widthPixels;
 		screenH = dm.heightPixels;
@@ -47,15 +50,26 @@ public class ScrollableImageView extends ImageView {
 	@Override
 	public void computeScroll() {
 		super.computeScroll();
+		// computeScrollOffset() returns true only when the scrolling isn't
+		// already finished
 		if (overScroller.computeScrollOffset()) {
 			positionX = overScroller.getCurrX();
 			positionY = overScroller.getCurrY();
 			scrollTo(positionX, positionY);
 		} else {
+			// when scrolling is over, we will want to "spring back" if the
+			// image is overscrolled
 			overScroller.springBack(positionX, positionY, 0,
-					(getDrawable().getBounds().width() - screenW), 0, (getDrawable().getBounds()
-							.height() - screenH));
+					getMaxHorizontal(), 0, getMaxVertical());
 		}
+	}
+
+	private int getMaxHorizontal() {
+		return (getDrawable().getBounds().width() - screenW);
+	}
+
+	private int getMaxVertical() {
+		return (getDrawable().getBounds().height() - screenH);
 	}
 
 	private SimpleOnGestureListener gestureListener = new SimpleOnGestureListener() {
@@ -68,19 +82,36 @@ public class ScrollableImageView extends ImageView {
 		}
 
 		@Override
-		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+				float velocityY) {
 			overScroller.forceFinished(true);
-			overScroller.fling(positionX, positionY, (int) -velocityX, (int) -velocityY, 0,
-					(getDrawable().getBounds().width() - screenW), 0, (getDrawable().getBounds()
-							.height() - screenH));
+			overScroller.fling(positionX, positionY, (int) -velocityX,
+					(int) -velocityY, 0, getMaxHorizontal(), 0,
+					getMaxVertical());
 			ViewCompat.postInvalidateOnAnimation(ScrollableImageView.this);
 			return true;
 		}
 
 		@Override
-		public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+		public boolean onScroll(MotionEvent e1, MotionEvent e2,
+				float distanceX, float distanceY) {
 			overScroller.forceFinished(true);
-			overScroller.startScroll(positionX, positionY, (int) distanceX, (int) distanceY, 0);
+			// normalize scrolling distances to not overscroll the image
+			int dx = (int) distanceX;
+			int dy = (int) distanceY;
+			int newPositionX = positionX + dx;
+			int newPositionY = positionY + dy;
+			if (newPositionX < 0) {
+				dx -= newPositionX;
+			} else if (newPositionX > getMaxHorizontal()) {
+				dx -= (newPositionX - getMaxHorizontal());
+			}
+			if (newPositionY < 0) {
+				dy -= newPositionY;
+			} else if (newPositionY > getMaxVertical()) {
+				dy -= (newPositionY - getMaxVertical());
+			}
+			overScroller.startScroll(positionX, positionY, dx, dy, 0);
 			ViewCompat.postInvalidateOnAnimation(ScrollableImageView.this);
 			return true;
 		}
