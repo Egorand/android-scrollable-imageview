@@ -65,11 +65,11 @@ public class ScrollableImageView extends ImageView {
 	}
 
 	private int getMaxHorizontal() {
-		return (getDrawable().getBounds().width() - screenW);
+		return (Math.abs(getDrawable().getBounds().width() - screenW));
 	}
 
 	private int getMaxVertical() {
-		return (getDrawable().getBounds().height() - screenH);
+		return (Math.abs(getDrawable().getBounds().height() - screenH));
 	}
 
 	private SimpleOnGestureListener gestureListener = new SimpleOnGestureListener() {
