@@ -1,6 +1,8 @@
-android-scrollable-imageview
+ScrollableImageView
 ============================
 
-An easy implementation of a ScrollableImageView in Android.
+An extension to the standard ImageView that allows images bigger than the screen sizes to respond to scroll and fling events.
 
-Contains a sample Activity that integrates the ScrollableImageView.
+**Usage**
+
+Check the **sample** module for a project that integrates ScrollableImageView.
