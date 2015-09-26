@@ -83,8 +83,7 @@ public class ScrollableImageView extends ImageView {
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
                                float velocityY) {
             overScroller.forceFinished(true);
-            overScroller.fling(positionX, positionY, (int) -velocityX,
-                    (int) -velocityY, 0, getMaxHorizontal(), 0,
+            overScroller.fling(positionX, positionY, (int) -velocityX, (int) -velocityY, 0, getMaxHorizontal(), 0,
                     getMaxVertical());
             ViewCompat.postInvalidateOnAnimation(ScrollableImageView.this);
             return true;
