@@ -2,11 +2,39 @@
 <items version="2" >
 
     <item
+        jar="/Users/Egor/Development/production-workspace/android-scrollable-imageview/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/Egor/Development/production-workspace/android-scrollable-imageview/sample/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-6e6efc212e203fb385c118cd5054bb226beb99be.jar" />
+    </item>
+    <item
+        jar="/Users/Egor/Development/production-workspace/android-scrollable-imageview/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/Egor/Development/production-workspace/android-scrollable-imageview/sample/build/intermediates/pre-dexed/debug/classes-c3f727751e7f3bdd59191b318d449059dc6bebe9.jar" />
+    </item>
+    <item
+        jar="/Users/Egor/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/Egor/Development/production-workspace/android-scrollable-imageview/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-69c634bdc5a05f3b7e2187679fad877913bbf7e2.jar" />
+    </item>
+    <item
         jar="/Users/Egor/Development/production-workspace/android-scrollable-imageview/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
         <dex dex="/Users/Egor/Development/production-workspace/android-scrollable-imageview/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-46891e30458bf55063f440b2d8d15b1c3b4da4cc.jar" />
+    </item>
+    <item
+        jar="/Users/Egor/Development/production-workspace/android-scrollable-imageview/sample/build/intermediates/exploded-aar/android-scrollable-imageview/library/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="376b54331bf4ac44022aa38b1b28b64d5ca167d7">
+        <dex dex="/Users/Egor/Development/production-workspace/android-scrollable-imageview/sample/build/intermediates/pre-dexed/debug/classes-2cba808dff3a3c32fe6dc6a5ca4cc03516efc072.jar" />
     </item>
     <item
         jar="/Users/Egor/Development/production-workspace/android-scrollable-imageview/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
@@ -16,11 +44,11 @@
         <dex dex="/Users/Egor/Development/production-workspace/android-scrollable-imageview/app/build/intermediates/pre-dexed/debug/classes-5a499575a7911ee502c5c8e9e48a2f90040e617c.jar" />
     </item>
     <item
-        jar="/Users/Egor/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jar="/Users/Egor/Development/production-workspace/android-scrollable-imageview/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/Users/Egor/Development/production-workspace/android-scrollable-imageview/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-69c634bdc5a05f3b7e2187679fad877913bbf7e2.jar" />
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/Egor/Development/production-workspace/android-scrollable-imageview/sample/build/intermediates/pre-dexed/debug/classes-1711343cfbf98bc545ceae30f9209c252ce2fd3d.jar" />
     </item>
 
 </items>
